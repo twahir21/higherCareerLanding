@@ -159,7 +159,7 @@ const Navbar = () => {
                     </li>
 
                     <li>
-                        <Link to="/faq" className="nav__link">Accounts</Link>
+                        <Link to="https://accounts.highercareer.academy" className="nav__link">Accounts</Link>
                     </li>
 
                     <li>
