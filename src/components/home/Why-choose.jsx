@@ -20,7 +20,7 @@ const WhyChoose = () => {
 
           <div className="why-choose-grid">
             {/* Academic Excellence */}
-            <div className="why-choose-card">
+            <div className="why-choose-card" data-aos="fade-down-right">
               <div className="card-icon">
                 <FontAwesomeIcon icon={faStar} className="fas fa-star" />
               </div>
@@ -29,7 +29,7 @@ const WhyChoose = () => {
             </div>
 
             {/* Expert Faculty */}
-            <div className="why-choose-card">
+            <div className="why-choose-card" data-aos="fade-down-right">
               <div className="card-icon">
                 <FontAwesomeIcon icon={faUserTie} className="fas fa-user-tie" />
               </div>
@@ -38,7 +38,7 @@ const WhyChoose = () => {
             </div>
 
             {/* Modern Facilities */}
-            <div className="why-choose-card">
+            <div className="why-choose-card" data-aos="fade-down-right">
               <div className="card-icon">
                 <FontAwesomeIcon icon={faBuilding} className="fas fa-building" />
               </div>
@@ -47,7 +47,7 @@ const WhyChoose = () => {
             </div>
 
             {/* Holistic Development */}
-            <div className="why-choose-card">
+            <div className="why-choose-card" data-aos="fade-down-right">
               <div className="card-icon">
                 <FontAwesomeIcon icon={faChild} className="fas fa-child" />
               </div>
@@ -56,7 +56,7 @@ const WhyChoose = () => {
             </div>
 
             {/* Personalized Learning */}
-            <div className="why-choose-card">
+            <div className="why-choose-card" data-aos="fade-down-right">
               <div className="card-icon">
                 <FontAwesomeIcon icon={faUserEdit} className="fas fa-user-edit" />
               </div>
@@ -65,7 +65,7 @@ const WhyChoose = () => {
             </div>
 
             {/* Strong Community Engagement */}
-            <div className="why-choose-card">
+            <div className="why-choose-card" data-aos="fade-down-right">
               <div className="card-icon">
                 <FontAwesomeIcon icon={faHandsHelping} className="fas fa-hands-helping" />
               </div>

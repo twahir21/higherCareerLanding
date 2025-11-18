@@ -6,22 +6,22 @@ const Stats = () => {
     <section className="stats-section">
       <div className="stats-container">
         <div className="stats-grid">
-          <div className="stat-card">
+          <div className="stat-card" data-aos="zoom-in-left">
             <FontAwesomeIcon icon={faUserGraduate} className="fas" />
             <h3>200+</h3>
             <p>Students</p>
           </div>
-          <div className="stat-card">
+          <div className="stat-card" data-aos="zoom-in-left">
             <FontAwesomeIcon icon={faChalkboardTeacher} className="fas" />
             <h3>50+</h3>
             <p>Expert Teachers</p>
           </div>
-          <div className="stat-card">
+          <div className="stat-card" data-aos="zoom-in-right">
             <FontAwesomeIcon icon={faPersonPraying} className="fas" />
             <h3>2</h3>
             <p>Religious Teachings</p>
           </div>
-          <div className="stat-card">
+          <div className="stat-card" data-aos="zoom-in-right">
             <FontAwesomeIcon icon={faTrophy} className="fas" />
             <h3>95%</h3>
             <p>Success Rate</p>

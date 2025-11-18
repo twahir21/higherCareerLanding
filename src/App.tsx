@@ -24,7 +24,26 @@ const App = () => {
     new fairyDustCursor();
   }, []);
 
+  useEffect(() => {
+    const win = window as any;
 
+    if (win && win.AOS && typeof win.AOS.init === "function") {
+      win.AOS.init({
+        duration: 800,
+        once: false, // animate again when elements scroll back into view
+        mirror: true, // also animate when scrolling up
+        easing: "ease-in-out",
+      });
+    }
+
+    // Optional: refresh AOS when DOM changes
+    const observer = new MutationObserver(() => win.AOS?.refreshHard());
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Cleanup on unmount
+    return () => observer.disconnect();
+  }, []);
+  
   return (
     <>
     <Navbar/>

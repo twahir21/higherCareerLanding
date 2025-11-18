@@ -108,13 +108,13 @@ const Navbar = () => {
                                     <ul className="dropdown__list">
                                         <li>
                                             <a className="dropdown__link" onClick={handleNurseryJoin}>
-                                                Nursery Joining Instruction
+                                                Download Nursery Joining Instruction
                                             </a>
                                         </li>
 
                                         <li>
                                             <a className="dropdown__link" onClick={handlePrimaryJoin}>
-                                                Primary Joining Instruction
+                                                Download Primary Joining Instruction
                                             </a>
                                         </li>
 

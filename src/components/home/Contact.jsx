@@ -101,7 +101,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-section"  id="contact-section">
+    <div className="contact-section"  id="contact-section" data-aos="zoom-out-up">
       <h1>Contact Us</h1>
       <div className="contact-container">
         <div className="contact-info">

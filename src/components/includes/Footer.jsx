@@ -16,7 +16,8 @@ const Footer = () => {
     }, [])
   return (
     <>
-      <footer className="main-footer">
+      <footer className="main-footer" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
         <div className="footer-content">
           <div className="footer-section">
             <h3>HCA</h3>

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Features = () => {
   return (
-    <section className="features-section">
+    <section className="features-section" data-aos="fade-up-left">
       <div className="container">
         <div className="section-header">
           <h2>Our Features</h2>
@@ -21,7 +21,7 @@ const Features = () => {
 
         <div className="features-grid">
           {/* Academic Management */}
-          <div className="feature-card">
+          <div className="feature-card" data-aos="fade-up-left">
             <div className="feature-icon">
               <FontAwesomeIcon icon={faGraduationCap} className="fas" />
             </div>
@@ -30,7 +30,7 @@ const Features = () => {
           </div>
 
           {/* Student Portal */}
-          <div className="feature-card">
+          <div className="feature-card" data-aos="fade-up-left">
             <div className="feature-icon">
               <FontAwesomeIcon icon={faUserGraduate} className="fas" />
             </div>
@@ -42,7 +42,7 @@ const Features = () => {
           </div>
 
           {/* Teacher Dashboard */}
-          <div className="feature-card">
+          <div className="feature-card" data-aos="fade-up-left">
             <div className="feature-icon">
               <FontAwesomeIcon icon={faChalkboardTeacher} className="fas" />
             </div>
@@ -54,7 +54,7 @@ const Features = () => {
           </div>
 
           {/* Parent Access */}
-          <div className="feature-card">
+          <div className="feature-card" data-aos="fade-down-left">
             <div className="feature-icon">
               <FontAwesomeIcon icon={faUsers} className="fas" />
             </div>
@@ -66,7 +66,7 @@ const Features = () => {
           </div>
 
           {/* Event Management */}
-          <div className="feature-card">
+          <div className="feature-card" data-aos="fade-down-left">
             <div className="feature-icon">
               <FontAwesomeIcon icon={faCalendarAlt} className="fas" />
             </div>

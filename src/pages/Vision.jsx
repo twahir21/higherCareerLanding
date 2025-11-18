@@ -8,7 +8,7 @@ const Vision = () => {
       <div className="vision-container">
         
         {/* Mission */}
-        <div className="vision-card">
+        <div className="vision-card" data-aos="fade-down-right">
           <div className="vision-icon mission">
             <FontAwesomeIcon icon={faBullseye} />
           </div>
@@ -21,7 +21,7 @@ const Vision = () => {
         </div>
 
         {/* Vision */}
-        <div className="vision-card reverse">
+        <div className="vision-card reverse" data-aos="fade-down-left">
           <div className="vision-content">
             <h2>VISION</h2>
             <p>
@@ -34,7 +34,7 @@ const Vision = () => {
         </div>
 
         {/* Values */}
-        <div className="vision-card">
+        <div className="vision-card" data-aos="fade-down-right">
           <div className="vision-icon valuesIcon">
             <FontAwesomeIcon icon={faBalanceScale} />
           </div>
@@ -47,7 +47,7 @@ const Vision = () => {
         </div>
 
         {/* Motto */}
-        <div className="vision-card reverse">
+        <div className="vision-card reverse" data-aos="fade-down-left">
           <div className="vision-content">
             <h2>SCHOOL MOTTO</h2>
             <p>

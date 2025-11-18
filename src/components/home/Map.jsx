@@ -4,7 +4,7 @@ import { faMapMarkerAlt, faClock, faPhone, faDirections } from "@fortawesome/fre
 const Map = () => {
   return (
     <div>
-      <section className="map-section">
+      <section className="map-section" data-aos="fade-up" data-aos-duration="1000">
         <h2>Our Location</h2>
         <div className="container">
           <div className="map-container">
