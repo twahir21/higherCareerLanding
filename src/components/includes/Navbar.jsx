@@ -73,7 +73,7 @@ const Navbar = () => {
     <header className="header">
         <nav className="nav container">
             <div className="nav__data">
-                <Link to="#" className="nav__logo">
+                <Link to="/#hero" className="nav__logo">
                     <span className="logo">
                         <img src={logo} alt="logo" />
                     </span>HigherCareer
