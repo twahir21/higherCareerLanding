@@ -127,41 +127,6 @@ body {
     transform: rotate(45deg); /* Rotate icon to indicate collapse */
 }
 
-
-/* Search Input and Icon Styling */
-.search {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 20px 0;
-    width: 28rem;
-    padding: 5px 10px;
-    background: #faf7f7; /* Light Gray */
-    border: 1px solid #A3D4FF; /* Light Blue */
-    border-radius: 8px;
-}
-
-
-.search input {
-    flex: 1;
-    border: none;
-    padding: 10px;
-    outline: none;
-    font-size: 16px;
-    color: #333333; /* Dark Gray */
-    background: transparent;
-}
-
-.search input::placeholder {
-    color: #666666; /* Gray */
-    font-style: italic;
-}
-
-.search i {
-    font-size: 18px;
-    color: #007BFF; /* Blue */
-}
-
 /* FAQ End Section Styling */
 .faq-section h4 {
     margin-top: 30px;

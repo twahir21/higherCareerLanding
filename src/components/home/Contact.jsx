@@ -75,6 +75,131 @@ const Contact = () => {
         text: formData.message,
       });
 
+//       await fetch('https://api.resend.com/emails', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'Authorization': `Bearer ${process.env.SHULE_PLUS_KEY} ?? ""`,
+//         },
+//         body: JSON.stringify({
+//           from: formData.email,
+//           to: process.env.RECEIVER_EMAIL ?? "sample@gmail.com",
+//           subject: 'hello world',
+//           html: `
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Email Template</title>
+//     <style>
+//         /* Reset styles */
+//         body, html {
+//             margin: 0;
+//             padding: 0;
+//             font-family: Arial, sans-serif;
+//             line-height: 1.6;
+//             color: #333333;
+//             background-color: #f6f6f6;
+//         }
+        
+//         /* Container */
+//         .email-container {
+//             max-width: 600px;
+//             margin: 0 auto;
+//             background-color: #ffffff;
+//             border: 1px solid #e0e0e0;
+//             border-radius: 8px;
+//             overflow: hidden;
+//         }
+        
+//         /* Header */
+//         .email-header {
+//             background-color: #4a90e2;
+//             color: #ffffff;
+//             padding: 20px;
+//             text-align: center;
+//         }
+        
+//         .email-header h1 {
+//             margin: 0;
+//             font-size: 24px;
+//             font-weight: bold;
+//         }
+        
+//         /* Content */
+//         .email-content {
+//             padding: 30px;
+//         }
+        
+//         .subject {
+//             font-size: 18px;
+//             font-weight: bold;
+//             color: #2c3e50;
+//             margin-bottom: 20px;
+//             padding-bottom: 10px;
+//             border-bottom: 2px solid #f0f0f0;
+//         }
+        
+//         .message {
+//             font-size: 16px;
+//             line-height: 1.6;
+//             color: #555555;
+//         }
+        
+//         /* Footer */
+//         .email-footer {
+//             background-color: #f8f9fa;
+//             padding: 20px;
+//             text-align: center;
+//             font-size: 14px;
+//             color: #666666;
+//             border-top: 1px solid #e0e0e0;
+//         }
+        
+//         /* Responsive */
+//         @media only screen and (max-width: 600px) {
+//             .email-container {
+//                 margin: 10px;
+//                 border-radius: 0;
+//             }
+            
+//             .email-content {
+//                 padding: 20px;
+//             }
+//         }
+//     </style>
+// </head>
+// <body>
+//     <div class="email-container">
+
+//         <div class="email-header">
+//             <h1>Message Notification</h1>
+//         </div>
+        
+
+//         <div class="email-content">
+//             <div class="subject">
+//                 {{subject}}
+//             </div>
+            
+//             <div class="message">
+//                 {{message}}
+//             </div>
+//         </div>
+        
+
+//         <div class="email-footer">
+//             <p>This is an automated message. Please do not reply to this email.</p>
+//             <p>&copy; 2025 Your Company. All rights reserved.</p>
+//         </div>
+//     </div>
+// </body>
+// </html>         
+//         `,
+//         }),
+//       });
+
       toast.success("✅ Your email was sent successfully!", {
         position: "top-right",
         autoClose: 3000,
@@ -119,6 +244,7 @@ const Contact = () => {
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
+          <label htmlFor="Email">Email:</label>
           <input 
             type="email" 
             name="email" 
