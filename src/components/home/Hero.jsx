@@ -9,7 +9,7 @@ const Hero = () => {
                 <h1>Welcome to Higher Career Academy</h1>
                 <p>Empowering students with quality education and innovative learning solutions</p>
                 <div className="hero-buttons">
-                    <a href="/parent-register" className="hero-btn btn-primary">Get Started</a>
+                    <a href="https://accounts.highercareer.academy" className="hero-btn btn-primary">Get Started</a>
                     <a href="/about-us" className="hero-btn btn-secondary">Learn More</a>
                 </div>
             </div>

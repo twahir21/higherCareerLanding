@@ -30,43 +30,6 @@ const Navbar = () => {
     }
     }, []);
 
-    const handlePrimaryJoin = async (event) => {
-        event.preventDefault(); // Prevent default link behavior
-    
-        try {
-            const response = await fetch("/primary-join", { method: "GET" });
-    
-            if (response.ok) {
-                window.location.href = "/primary-join"; // Redirect to the server-handled page
-            } else {
-                alert("Server error! Unable to load Primary Joining Instruction.");
-            }
-        } catch (error) {
-            console.error("Request failed:", error);
-            alert("Failed to reach the server.");
-        }
-    };
-
-
-    const handleNurseryJoin = async (event) => {
-        event.preventDefault(); // Prevent default link behavior
-    
-        try {
-            const response = await fetch("/nursery-join", { method: "GET" });
-    
-            if (response.ok) {
-                window.location.href = "/nursery-join"; // Redirect to the server-handled page
-            } else {
-                alert("Server error! Unable to load Nursery Joining Instruction.");
-            }
-        } catch (error) {
-            console.error("Request failed:", error);
-            alert("Failed to reach the server.");
-        }
-    };
-    
-
-
 
   return (
     <>
@@ -107,13 +70,13 @@ const Navbar = () => {
 
                                     <ul className="dropdown__list">
                                         <li>
-                                            <a className="dropdown__link" onClick={handleNurseryJoin}>
+                                            <a className="dropdown__link" href="/download/Nursery_Joining_Instructions_2026.pdf" download>
                                                 Download Nursery Joining Instruction
                                             </a>
                                         </li>
 
                                         <li>
-                                            <a className="dropdown__link" onClick={handlePrimaryJoin}>
+                                            <a className="dropdown__link" href="/download/Primary_Joining_Instructions_2026.pdf" download>
                                                 Download Primary Joining Instruction
                                             </a>
                                         </li>

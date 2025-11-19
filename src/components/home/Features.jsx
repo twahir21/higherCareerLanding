@@ -36,7 +36,7 @@ const Features = () => {
             </div>
             <h3>Student Portal</h3>
             <p>Parents can access grades, schedules, and attendance of student</p>
-            <a href="/parent-register" className="feature-link">
+            <a href="https://accounts.highercareer.academy" className="feature-link">
               Get Started <FontAwesomeIcon icon={faArrowRight} className="fas" />
             </a>
           </div>
@@ -48,7 +48,7 @@ const Features = () => {
             </div>
             <h3>Teacher Dashboard</h3>
             <p>Tools for attendance, grading, and student performance tracking</p>
-            <a href="/teacher-register" className="feature-link">
+            <a href="https://accounts.highercareer.academy" className="feature-link">
               Get Started <FontAwesomeIcon icon={faArrowRight} className="fas" />
             </a>
           </div>
@@ -60,7 +60,7 @@ const Features = () => {
             </div>
             <h3>Parent Access</h3>
             <p>Real-time updates on student progress and school communications</p>
-            <a href="/parent-register" className="feature-link">
+            <a href="https://accounts.highercareer.academy" className="feature-link">
               Get Started <FontAwesomeIcon icon={faArrowRight} className="fas" />
             </a>
           </div>
@@ -72,7 +72,7 @@ const Features = () => {
             </div>
             <h3>Event Management</h3>
             <p>Stay updated with school events, sports, and extracurricular activities</p>
-            <Link to="/faq" className="feature-link">
+            <Link to="https://accounts.highercareer.academy" className="feature-link">
               Check for updates <FontAwesomeIcon icon={faArrowRight} className="fas" />
             </Link>
           </div>
