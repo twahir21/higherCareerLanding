@@ -664,6 +664,15 @@
     transition: all 0.3s ease;
 }
 
+.contact-form .col{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input {
+    margin: 0.6rem 0;
+}
+
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: var(--primary-color);

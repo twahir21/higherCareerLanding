@@ -7,9 +7,9 @@ import {
   faClock, 
   faHeart 
 } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { links } from "../../const/links.const";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -69,149 +69,45 @@ const Contact = () => {
     setLoading(true);
     
     try {
-      await axios.post("http://localhost:3000/api/sendEmail", {
-        to: formData.email,
-        subject: formData.subject,
-        text: formData.message,
-      });
+      console.log("Sender started !!!!!");
+      console.log("FormData: ", formData)
+      const Response = await fetch(`${links.server}/email/send-email`, {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      }).then(r => r.json());
 
-//       await fetch('https://api.resend.com/emails', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//           'Authorization': `Bearer ${process.env.SHULE_PLUS_KEY} ?? ""`,
-//         },
-//         body: JSON.stringify({
-//           from: formData.email,
-//           to: process.env.RECEIVER_EMAIL ?? "sample@gmail.com",
-//           subject: 'hello world',
-//           html: `
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>Email Template</title>
-//     <style>
-//         /* Reset styles */
-//         body, html {
-//             margin: 0;
-//             padding: 0;
-//             font-family: Arial, sans-serif;
-//             line-height: 1.6;
-//             color: #333333;
-//             background-color: #f6f6f6;
-//         }
-        
-//         /* Container */
-//         .email-container {
-//             max-width: 600px;
-//             margin: 0 auto;
-//             background-color: #ffffff;
-//             border: 1px solid #e0e0e0;
-//             border-radius: 8px;
-//             overflow: hidden;
-//         }
-        
-//         /* Header */
-//         .email-header {
-//             background-color: #4a90e2;
-//             color: #ffffff;
-//             padding: 20px;
-//             text-align: center;
-//         }
-        
-//         .email-header h1 {
-//             margin: 0;
-//             font-size: 24px;
-//             font-weight: bold;
-//         }
-        
-//         /* Content */
-//         .email-content {
-//             padding: 30px;
-//         }
-        
-//         .subject {
-//             font-size: 18px;
-//             font-weight: bold;
-//             color: #2c3e50;
-//             margin-bottom: 20px;
-//             padding-bottom: 10px;
-//             border-bottom: 2px solid #f0f0f0;
-//         }
-        
-//         .message {
-//             font-size: 16px;
-//             line-height: 1.6;
-//             color: #555555;
-//         }
-        
-//         /* Footer */
-//         .email-footer {
-//             background-color: #f8f9fa;
-//             padding: 20px;
-//             text-align: center;
-//             font-size: 14px;
-//             color: #666666;
-//             border-top: 1px solid #e0e0e0;
-//         }
-        
-//         /* Responsive */
-//         @media only screen and (max-width: 600px) {
-//             .email-container {
-//                 margin: 10px;
-//                 border-radius: 0;
-//             }
-            
-//             .email-content {
-//                 padding: 20px;
-//             }
-//         }
-//     </style>
-// </head>
-// <body>
-//     <div class="email-container">
 
-//         <div class="email-header">
-//             <h1>Message Notification</h1>
-//         </div>
-        
-
-//         <div class="email-content">
-//             <div class="subject">
-//                 {{subject}}
-//             </div>
-            
-//             <div class="message">
-//                 {{message}}
-//             </div>
-//         </div>
-        
-
-//         <div class="email-footer">
-//             <p>This is an automated message. Please do not reply to this email.</p>
-//             <p>&copy; 2025 Your Company. All rights reserved.</p>
-//         </div>
-//     </div>
-// </body>
-// </html>         
-//         `,
-//         }),
-//       });
-
-      toast.success("✅ Your email was sent successfully!", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
+      if(Response.success) {
+        toast.success(Response.message, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+      }else {
+        toast.error(Response.message, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });    
+      }
 
       setFormData({ email: "", subject: "", message: "" }); // Clear form
     } catch (error) {
-      toast.error("❌ Failed to send email. Try again later.", {
+      toast.error(error instanceof Error ? error.message : "Failed to send email. Try again later.", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -219,7 +115,6 @@ const Contact = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      console.error("Error sending email:", error);
     } finally {
       setLoading(false);
     }
@@ -244,38 +139,52 @@ const Contact = () => {
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
-          <label htmlFor="Email">Email:</label>
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Email" 
-            value={formData.email} 
-            onChange={handleChange} 
-            required 
-            style={{ caretColor: "black" }}
-          />
-          {errors.email && <p className="error" style={{color: "red"}}>{errors.email}</p>}
+          <div>
+            <div className="col">
+              <label htmlFor="Email">Email:</label>
+              <input 
+                type="email" 
+                name="email" 
+                placeholder="somebody@gmail.com" 
+                value={formData.email} 
+                onChange={handleChange} 
+                required 
+                style={{ caretColor: "black" }}
+              />
+            </div>
+            {errors.email && <p className="error" style={{color: "red"}}>{errors.email}</p>}
+          </div>
 
-          <input 
-            type="text" 
-            name="subject" 
-            placeholder="Subject" 
-            value={formData.subject} 
-            onChange={handleChange} 
-            required 
-            style={{ caretColor: "black" }}
-          />
+          <div>
+          <div className="col">
+            <label htmlFor="Subject">Subject:</label>
+            <input 
+              type="text" 
+              name="subject" 
+              placeholder="Join Request" 
+              value={formData.subject} 
+              onChange={handleChange} 
+              required 
+              style={{ caretColor: "black" }}
+            />
+          </div>
           {errors.subject && <p className="error" style={{color: "red"}}>{errors.subject}</p>}
+          </div>
 
-          <textarea 
-            name="message" 
-            placeholder="Message" 
-            value={formData.message} 
-            onChange={handleChange} 
-            required 
-            style={{ caretColor: "black" }}
-          />
+          <div>
+            <div className="col">
+              <label htmlFor="Message">Message:</label>
+              <textarea 
+              name="message" 
+              placeholder="How to join the school ?" 
+              value={formData.message} 
+              onChange={handleChange} 
+              required 
+              style={{ caretColor: "black" }}
+            />
+            </div>
           {errors.message && <p className="error" style={{color: "red"}}>{errors.message}</p>}
+          </div>
 
           <button type="submit" className="btn btn-primary" disabled={loading}>
             {loading ? "Sending..." : "Send Message"}

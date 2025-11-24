@@ -31,10 +31,6 @@ export const HomePage = () => {
       }
     };
 
-    // Send a request to increment rootRequests
-    fetch("http://localhost:3000/", { method: "GET" })
-      .catch((error) => console.error("Error sending request:", error));
-
     // Run the scroll function once when the component mounts
     handleScroll();
   }, [location.key, location.hash]); // `location.key` changes on every new route ent
